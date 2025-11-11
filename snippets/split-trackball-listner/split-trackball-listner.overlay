@@ -1,3 +1,6 @@
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 /{
     split_inputs {
         #address-cells = <1>;
