@@ -24,12 +24,6 @@
             layers = <0>;
         };
 
-        colon {
-            bindings = <&kp SEMICOLON>;
-            key-positions = <35 35 36>;
-            layers = <0 3>;
-        };
-
         f1 {
             bindings = <&kp F1>;
             key-positions = <13 14>;
@@ -97,7 +91,7 @@
 &none  &kp Q                  &kp W                &kp E         &kp R         &kp T                                 &kp Y           &kp U  &kp I      &kp O                   &kp P                       &none
 &none  &kp A                  &kp S                &kp D         &kp F         &kp G           &none      &none      &kp H           &kp J  &kp K      &kp L                   &lt100 3 ENTER              &none
 &none  &mt100 LEFT_CONTROL Z  &mt100 LEFT_SHIFT X  &kp C         &kp V         &kp B           &kp TAB    &mkp LCLK  &kp N           &kp M  &kp COMMA  &mt100 RIGHT_SHIFT DOT  &mt100 RIGHT_CONTROL SLASH  &none
-&none  &kp LCTRL              &kp LEFT_SHIFT       &kp LEFT_GUI  &kp LEFT_ALT  &lt100 1 LANG2  &kp SPACE  &mkp RCLK  &lt100 2 LANG1  &none  &none      &kp K_APPLICATION       &kp MINUS                   &none
+&none  &kp LCTRL              &kp LEFT_SHIFT       &kp LEFT_GUI  &kp LEFT_ALT  &lt100 1 LANG2  &kp SPACE  &mkp RCLK  &lt100 2 LANG1  &none  &none      &kp K_APPLICATION       &kp SEMICOLON               &none
             >;
         };
 
@@ -107,7 +101,7 @@
 &trans  &kp F2                         &kp F3                  &kp F4        &kp F5        &kp F6                     &kp F7        &kp F8   &kp F9            &kp F10                           &kp F11                         &trans
 &trans  &kp NUMBER_1                   &kp NUMBER_2            &kp NUMBER_3  &kp NUMBER_4  &kp N5     &trans  &trans  &kp NUMBER_6  &kp N7   &kp N8            &kp N9                            &kp N0                          &trans
 &trans  &mt100 LEFT_CONTROL BACKSPACE  &mt100 LEFT_SHIFT LEFT  &kp DOWN      &kp UP_ARROW  &kp RIGHT  &trans  &trans  &kp GRAVE     &kp SQT  &kp LEFT_BRACKET  &mt100 RIGHT_SHIFT RIGHT_BRACKET  &mt100 RIGHT_CONTROL BACKSLASH  &trans
-&trans  &trans                         &trans                  &trans        &trans        &trans     &trans  &trans  &trans        &trans   &trans            &trans                            &trans                          &trans
+&trans  &trans                         &trans                  &trans        &trans        &trans     &trans  &trans  &trans        &trans   &trans            &trans                            &kp EQUAL                       &trans
             >;
         };
 
@@ -117,17 +111,17 @@
 &trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                   &kp HOME  &kp PAGE_UP     &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &trans
 &trans  &none         &none           &none         &mo 4         &none         &trans   &trans  &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW     &kp RIGHT       &kp BACKSPACE    &trans
 &trans  &kp LCTRL     &kp LEFT_SHIFT  &none         &none         &bt BT_CLR    &trans   &trans  &kp END   &kp PAGE_DOWN   &kp DELETE       &kp INS         &none            &trans
-&trans  &trans        &trans          &trans        &trans        &trans        &AltGrv  &trans  &trans    &trans          &trans           &trans          &trans           &trans
+&trans  &trans        &trans          &trans        &trans        &trans        &AltGrv  &trans  &trans    &trans          &trans           &trans          &none            &trans
             >;
         };
 
         layer_3 {
             bindings = <
-&trans  &trans     &trans          &trans  &trans  &trans                  &trans     &trans          &trans     &trans  &trans  &trans
-&trans  &none      &none           &none   &none   &none                   &none      &msc SCRL_UP    &none      &none   &none   &trans
-&trans  &none      &none           &none   &mo 4   &none   &trans  &trans  &mkp MCLK  &mkp LCLK       &mkp RCLK  &none   &none   &trans
-&trans  &kp LCTRL  &kp LEFT_SHIFT  &none   &none   &none   &trans  &trans  &none      &msc SCRL_DOWN  &none      &none   &none   &trans
-&trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans     &trans          &trans     &trans  &trans  &trans
+&trans  &trans     &trans          &trans  &trans  &trans                  &trans  &trans          &trans     &trans     &trans  &trans
+&trans  &none      &none           &none   &none   &none                   &none   &msc SCRL_UP    &none      &none      &none   &trans
+&trans  &none      &none           &none   &mo 4   &none   &trans  &trans  &none   &mkp LCLK       &mkp RCLK  &mkp MCLK  &none   &trans
+&trans  &kp LCTRL  &kp LEFT_SHIFT  &none   &none   &none   &trans  &trans  &none   &msc SCRL_DOWN  &none      &none      &none   &trans
+&trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans     &trans     &trans  &trans
             >;
         };
 
