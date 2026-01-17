@@ -89,7 +89,7 @@
             bindings = <
 &none  &none                  &none                &none         &none         &none                                 &none           &none  &none      &none                   &none                       &none
 &none  &kp Q                  &kp W                &kp E         &kp R         &kp T                                 &kp Y           &kp U  &kp I      &kp O                   &kp P                       &none
-&none  &kp A                  &kp S                &kp D         &kp F         &kp G           &none      &none      &kp H           &kp J  &kp K      &kp L                   &lt100 3 ENTER              &none
+&none  &kp A                  &kp S                &kp D         &kp F         &kp G           &none      &none      &kp H           &kp J  &kp K      &kp L                   &lt 3 ENTER                 &none
 &none  &mt200 LEFT_CONTROL Z  &mt200 LEFT_SHIFT X  &kp C         &kp V         &kp B           &kp TAB    &mkp LCLK  &kp N           &kp M  &kp COMMA  &mt200 RIGHT_SHIFT DOT  &mt200 RIGHT_CONTROL SLASH  &none
 &none  &kp LCTRL              &kp LEFT_SHIFT       &kp LEFT_GUI  &kp LEFT_ALT  &lt100 1 LANG2  &kp SPACE  &mkp RCLK  &lt100 2 LANG1  &none  &none      &kp K_APPLICATION       &kp SEMICOLON               &none
             >;
