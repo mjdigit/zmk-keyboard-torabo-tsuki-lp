@@ -44,13 +44,13 @@
     };
 
     behaviors {
-        mt100: mt100 {
+        mt200: mt200 {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT100";
+            label = "MT200";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
         };
 
@@ -90,7 +90,7 @@
 &none  &none                  &none                &none         &none         &none                                 &none           &none  &none      &none                   &none                       &none
 &none  &kp Q                  &kp W                &kp E         &kp R         &kp T                                 &kp Y           &kp U  &kp I      &kp O                   &kp P                       &none
 &none  &kp A                  &kp S                &kp D         &kp F         &kp G           &none      &none      &kp H           &kp J  &kp K      &kp L                   &lt100 3 ENTER              &none
-&none  &mt100 LEFT_CONTROL Z  &mt100 LEFT_SHIFT X  &kp C         &kp V         &kp B           &kp TAB    &mkp LCLK  &kp N           &kp M  &kp COMMA  &mt100 RIGHT_SHIFT DOT  &mt100 RIGHT_CONTROL SLASH  &none
+&none  &mt200 LEFT_CONTROL Z  &mt200 LEFT_SHIFT X  &kp C         &kp V         &kp B           &kp TAB    &mkp LCLK  &kp N           &kp M  &kp COMMA  &mt200 RIGHT_SHIFT DOT  &mt200 RIGHT_CONTROL SLASH  &none
 &none  &kp LCTRL              &kp LEFT_SHIFT       &kp LEFT_GUI  &kp LEFT_ALT  &lt100 1 LANG2  &kp SPACE  &mkp RCLK  &lt100 2 LANG1  &none  &none      &kp K_APPLICATION       &kp SEMICOLON               &none
             >;
         };
@@ -100,7 +100,7 @@
 &trans  &trans                         &trans                  &trans        &trans        &trans                     &trans        &trans   &trans            &trans                            &trans                          &trans
 &trans  &kp F2                         &kp F3                  &kp F4        &kp F5        &kp F6                     &kp F7        &kp F8   &kp F9            &kp F10                           &kp F11                         &trans
 &trans  &kp NUMBER_1                   &kp NUMBER_2            &kp NUMBER_3  &kp NUMBER_4  &kp N5     &trans  &trans  &kp NUMBER_6  &kp N7   &kp N8            &kp N9                            &kp N0                          &trans
-&trans  &mt100 LEFT_CONTROL BACKSPACE  &mt100 LEFT_SHIFT LEFT  &kp DOWN      &kp UP_ARROW  &kp RIGHT  &trans  &trans  &kp GRAVE     &kp SQT  &kp LEFT_BRACKET  &mt100 RIGHT_SHIFT RIGHT_BRACKET  &mt100 RIGHT_CONTROL BACKSLASH  &trans
+&trans  &mt200 LEFT_CONTROL BACKSPACE  &mt200 LEFT_SHIFT LEFT  &kp DOWN      &kp UP_ARROW  &kp RIGHT  &trans  &trans  &kp GRAVE     &kp SQT  &kp LEFT_BRACKET  &mt200 RIGHT_SHIFT RIGHT_BRACKET  &mt200 RIGHT_CONTROL BACKSLASH  &trans
 &trans  &trans                         &trans                  &trans        &trans        &trans     &trans  &trans  &trans        &trans   &trans            &trans                            &kp EQUAL                       &trans
             >;
         };
