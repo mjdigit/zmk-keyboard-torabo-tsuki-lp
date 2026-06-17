@@ -41,6 +41,12 @@
             key-positions = <35 36>;
             layers = <1>;
         };
+
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <35 36>;
+            layers = <0>;
+        };
     };
 
     behaviors {
@@ -51,7 +57,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
         };
 
         lt100: lt100 {
