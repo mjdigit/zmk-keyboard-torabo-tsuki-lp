@@ -10,42 +10,43 @@
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <13 14>;
-            layers = <0>;
+            layers = <0 4>;
         };
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <26 27>;
+            layers = <0 4>;
         };
 
         minus {
             bindings = <&kp MINUS>;
             key-positions = <21 22>;
-            layers = <0>;
+            layers = <0 4>;
         };
 
         f1 {
             bindings = <&kp F1>;
             key-positions = <13 14>;
-            layers = <1>;
+            layers = <1 5>;
         };
 
         f12 {
             bindings = <&kp F12>;
             key-positions = <21 22>;
-            layers = <1>;
+            layers = <1 5>;
         };
 
         equal {
             bindings = <&kp EQUAL>;
             key-positions = <35 36>;
-            layers = <1>;
+            layers = <1 5>;
         };
 
         semicolon {
             bindings = <&kp SEMICOLON>;
             key-positions = <35 36>;
-            layers = <0>;
+            layers = <0 4>;
         };
     };
 
@@ -96,52 +97,107 @@
 
             label = "ALTGRV";
         };
+
+        ctr_spc: ctr_spc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp SPACE>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "CTR_SPC";
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        WinBase {
             bindings = <
 &none  &none                  &none                &none         &none         &none                                 &none           &none  &none      &none                   &none                       &none
 &none  &kp Q                  &kp W                &kp E         &kp R         &kp T                                 &kp Y           &kp U  &kp I      &kp O                   &kp P                       &none
 &none  &kp A                  &kp S                &kp D         &kp F         &kp G           &none      &none      &kp H           &kp J  &kp K      &kp L                   &lt200hp 3 ENTER            &none
 &none  &mt200 LEFT_CONTROL Z  &mt200 LEFT_SHIFT X  &kp C         &kp V         &kp B           &kp TAB    &mkp LCLK  &kp N           &kp M  &kp COMMA  &mt200 RIGHT_SHIFT DOT  &mt200 RIGHT_CONTROL SLASH  &none
-&none  &kp LCTRL              &kp LEFT_SHIFT       &kp LEFT_GUI  &kp LEFT_ALT  &lt100 1 LANG2  &kp SPACE  &mkp RCLK  &lt100 2 LANG1  &none  &none      &kp K_APPLICATION       &kp SEMICOLON               &none
+&none  &kp LCTRL              &kp LEFT_SHIFT       &kp LEFT_GUI  &kp LEFT_ALT  &lt100 1 LANG2  &kp SPACE  &mkp RCLK  &lt100 2 LANG1  &none  &none      &kp K_APPLICATION       &none                       &none
             >;
         };
 
-        layer_1 {
+        WinLower {
             bindings = <
 &trans  &trans                         &trans                  &trans        &trans        &trans                     &trans        &trans   &trans            &trans                            &trans                          &trans
 &trans  &kp F2                         &kp F3                  &kp F4        &kp F5        &kp F6                     &kp F7        &kp F8   &kp F9            &kp F10                           &kp F11                         &trans
 &trans  &kp NUMBER_1                   &kp NUMBER_2            &kp NUMBER_3  &kp NUMBER_4  &kp N5     &trans  &trans  &kp NUMBER_6  &kp N7   &kp N8            &kp N9                            &kp N0                          &trans
 &trans  &mt200 LEFT_CONTROL BACKSPACE  &mt200 LEFT_SHIFT LEFT  &kp DOWN      &kp UP_ARROW  &kp RIGHT  &trans  &trans  &kp GRAVE     &kp SQT  &kp LEFT_BRACKET  &mt200 RIGHT_SHIFT RIGHT_BRACKET  &mt200 RIGHT_CONTROL BACKSLASH  &trans
-&trans  &trans                         &trans                  &trans        &trans        &trans     &trans  &trans  &trans        &trans   &trans            &trans                            &kp EQUAL                       &trans
+&trans  &trans                         &trans                  &trans        &trans        &trans     &trans  &trans  &trans        &trans   &trans            &trans                            &to 4                           &trans
             >;
         };
 
-        layer_2 {
+        WinUpper {
             bindings = <
-&trans  &trans        &trans          &trans        &trans        &trans                         &trans    &trans          &trans           &trans          &trans           &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                   &kp HOME  &kp PAGE_UP     &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &trans
-&trans  &none         &none           &none         &mo 4         &none         &trans   &trans  &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW     &kp RIGHT       &kp BACKSPACE    &trans
-&trans  &kp LCTRL     &kp LEFT_SHIFT  &none         &none         &bt BT_CLR    &trans   &trans  &kp END   &kp PAGE_DOWN   &kp DELETE       &kp INS         &none            &trans
-&trans  &trans        &trans          &trans        &trans        &trans        &AltGrv  &trans  &trans    &trans          &trans           &trans          &none            &trans
+&trans  &trans     &trans          &trans   &trans  &trans                            &trans    &trans          &trans           &trans          &trans           &trans
+&trans  &kp F13    &kp F14         &kp F15  &none   &bt BT_SEL 0                      &kp HOME  &kp PAGE_UP     &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &trans
+&trans  &kp F16    &kp F17         &kp F18  &mo 8   &bt BT_SEL 1  &trans      &trans  &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW     &kp RIGHT       &kp BACKSPACE    &trans
+&trans  &kp LCTRL  &kp LEFT_SHIFT  &none    &none   &bt BT_SEL 2  &bt BT_CLR  &trans  &kp END   &kp PAGE_DOWN   &kp DELETE       &none           &kp INS          &trans
+&trans  &trans     &trans          &trans   &trans  &trans        &AltGrv     &trans  &trans    &trans          &trans           &trans          &none            &trans
             >;
         };
 
-        layer_3 {
+        WinMouth {
             bindings = <
 &trans  &trans     &trans          &trans  &trans  &trans                  &trans  &trans          &trans     &trans     &trans  &trans
 &trans  &none      &none           &none   &none   &none                   &none   &msc SCRL_UP    &none      &none      &none   &trans
-&trans  &none      &none           &none   &mo 4   &none   &trans  &trans  &none   &mkp LCLK       &mkp RCLK  &mkp MCLK  &none   &trans
+&trans  &none      &none           &none   &mo 8   &none   &trans  &trans  &none   &mkp LCLK       &mkp RCLK  &mkp MCLK  &none   &trans
 &trans  &kp LCTRL  &kp LEFT_SHIFT  &none   &none   &none   &trans  &trans  &none   &msc SCRL_DOWN  &none      &none      &none   &trans
 &trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans     &trans     &trans  &trans
             >;
         };
 
-        layer_4 {
+        MacBase {
+            bindings = <
+&none  &none                  &none                &none     &none     &none                                 &none           &none  &none      &none                   &none                       &none
+&none  &kp Q                  &kp W                &kp E     &kp R     &kp T                                 &kp Y           &kp U  &kp I      &kp O                   &kp P                       &none
+&none  &kp A                  &kp S                &kp D     &kp F     &kp G           &none      &none      &kp H           &kp J  &kp K      &kp L                   &lt200hp 7 ENTER            &none
+&none  &mt200 LEFT_CONTROL Z  &mt200 LEFT_SHIFT X  &kp C     &kp V     &kp B           &kp TAB    &mkp LCLK  &kp N           &kp M  &kp COMMA  &mt200 RIGHT_SHIFT DOT  &mt200 RIGHT_CONTROL SLASH  &none
+&none  &kp LCTRL              &kp LEFT_SHIFT       &kp LALT  &kp LGUI  &lt100 5 LANG2  &kp SPACE  &mkp RCLK  &lt100 6 LANG1  &none  &none      &kp K_APPLICATION       &none                       &none
+            >;
+        };
+
+        MacLower {
+            bindings = <
+&trans  &trans                         &trans                  &trans        &trans        &trans                     &trans        &trans   &trans            &trans                            &trans                          &trans
+&trans  &kp F2                         &kp F3                  &kp F4        &kp F5        &kp F6                     &kp F7        &kp F8   &kp F9            &kp F10                           &kp F11                         &trans
+&trans  &kp NUMBER_1                   &kp NUMBER_2            &kp NUMBER_3  &kp NUMBER_4  &kp N5     &trans  &trans  &kp NUMBER_6  &kp N7   &kp N8            &kp N9                            &kp N0                          &trans
+&trans  &mt200 LEFT_CONTROL BACKSPACE  &mt200 LEFT_SHIFT LEFT  &kp DOWN      &kp UP_ARROW  &kp RIGHT  &trans  &trans  &kp GRAVE     &kp SQT  &kp LEFT_BRACKET  &mt200 RIGHT_SHIFT RIGHT_BRACKET  &mt200 RIGHT_CONTROL BACKSLASH  &trans
+&trans  &trans                         &trans                  &trans        &trans        &trans     &trans  &trans  &trans        &trans   &trans            &trans                            &to 0                           &trans
+            >;
+        };
+
+        MacUpper {
+            bindings = <
+&trans  &trans     &trans          &trans   &trans  &trans                            &trans    &trans          &trans           &trans          &trans           &trans
+&trans  &kp F13    &kp F14         &kp F15  &none   &bt BT_SEL 0                      &kp HOME  &kp PAGE_UP     &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &trans
+&trans  &kp F16    &kp F17         &kp F18  &mo 8   &bt BT_SEL 1  &trans      &trans  &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW     &kp RIGHT       &kp BACKSPACE    &trans
+&trans  &kp LCTRL  &kp LEFT_SHIFT  &none    &none   &bt BT_SEL 2  &bt BT_CLR  &trans  &kp END   &kp PAGE_DOWN   &kp DELETE       &none           &kp INS          &trans
+&trans  &trans     &trans          &trans   &trans  &trans        &ctr_spc    &trans  &trans    &trans          &trans           &trans          &none            &trans
+            >;
+        };
+
+        MacMouth {
+            bindings = <
+&trans  &trans     &trans          &trans  &trans  &trans                  &trans  &trans          &trans     &trans     &trans  &trans
+&trans  &none      &none           &none   &none   &none                   &none   &msc SCRL_UP    &none      &none      &none   &trans
+&trans  &none      &none           &none   &mo 8   &none   &trans  &trans  &none   &mkp LCLK       &mkp RCLK  &mkp MCLK  &none   &trans
+&trans  &kp LCTRL  &kp LEFT_SHIFT  &none   &none   &none   &trans  &trans  &none   &msc SCRL_DOWN  &none      &none      &none   &trans
+&trans  &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans     &trans     &trans  &trans
+            >;
+        };
+
+        scroller {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
